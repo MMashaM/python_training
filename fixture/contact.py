@@ -95,3 +95,24 @@ class ContactHelper:
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
         self.app.return_to_homepage()
+
+    def modify_first_contact(self):
+        wd = self.app.wd
+        # self.open_home_page()
+        # select first contact
+        # wd.find_element_by_name("selected[]").click()
+        # submit edit
+        wd.find_element_by_xpath("(//img[@alt='Edit'])").click()
+        wd.find_element_by_name("firstname").click()
+        wd.find_element_by_name("firstname").clear()
+        wd.find_element_by_name("firstname").send_keys("1")
+        wd.find_element_by_name("middlename").click()
+        wd.find_element_by_name("middlename").clear()
+        wd.find_element_by_name("middlename").send_keys("2")
+        wd.find_element_by_name("lastname").click()
+        wd.find_element_by_name("lastname").clear()
+        wd.find_element_by_name("lastname").send_keys("3")
+        wd.find_element_by_xpath("//form[@action='edit.php']").click()
+        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+        # wd.find_element_by_link_text("home page").click()
+        self.app.return_to_homepage()

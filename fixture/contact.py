@@ -98,6 +98,7 @@ class ContactHelper:
 
     def modify_first_contact(self):
         wd = self.app.wd
+        self.app.return_to_homepage()
         # self.open_home_page()
         # select first contact
         # wd.find_element_by_name("selected[]").click()

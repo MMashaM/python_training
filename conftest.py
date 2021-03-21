@@ -4,6 +4,7 @@ from fixture.application import Application
 
 fixture = None
 
+
 @pytest.fixture
 # (scope = "session")
 def app(request):
@@ -17,10 +18,12 @@ def app(request):
     fixture.session.ensure_login(username="admin", password="secret")
     return fixture
 
-@pytest.fixture (scope = "session", autouse=True)
+
+@pytest.fixture(scope="session", autouse=True)
 def stop(request):
     def fin():
         fixture.session.ensure_logout()
         fixture.destroy()
+
     request.addfinalizer(fin)
     return fixture

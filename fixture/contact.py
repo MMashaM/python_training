@@ -70,9 +70,12 @@ class ContactHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
         wd = self.app.wd
         self.app.open_home_page()
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         # submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
@@ -83,6 +86,11 @@ class ContactHelper:
         wd = self.app.wd
         # select first contact
         wd.find_element_by_name("selected[]").click()
+
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        # select first contact
+        wd.find_elements_by_name("selected[]")[index].click()
 
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
@@ -121,10 +129,10 @@ class ContactHelper:
         if self.contact_cache is None:
             wd = self.app.wd
             self.app.open_home_page()
-            contacts = []
+            self.contact_cache = []
             for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
                 firstname = element.find_element_by_xpath("./td[3]").text
                 lastname = element.find_element_by_xpath("./td[2]").text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
-                contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
         return list(self.contact_cache)

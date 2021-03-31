@@ -101,7 +101,7 @@ class ContactHelper:
         # wd.find_element_by_name("selected[]").click()
         self.select_contact_by_index(index)
         # submit edit
-        wd.find_element_by_xpath("(//img[@alt='Edit'])").click()
+        wd.find_elements_by_xpath("(//img[@alt='Edit'])")[index].click()
         # wd.find_element_by_name("firstname").click()
         # wd.find_element_by_name("firstname").clear()
         # wd.find_element_by_name("firstname").send_keys(contact.firstname)
@@ -137,8 +137,8 @@ class ContactHelper:
             self.contact_cache = []
             for row in wd.find_elements_by_name("entry"):
                 cells = row.find_elements_by_tag_name("td")
-                firstname = cells[1].text
-                lastname = cells[2].text
+                firstname = cells[2].text
+                lastname = cells[1].text
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
                 all_phones = cells[5].text
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id,

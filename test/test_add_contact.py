@@ -8,7 +8,6 @@ testdata = [
         Contact(firstname="Masha", middlename="Alexandrovna", lastname="Chirva", nickname="Mmm",
                 title="Test", company="Python", address="Address", home="55-55-55", mobile="11-11-11", work="no",
                 fax="no", email="mariya.chirva@gmail.com", homepage="no",
-                # bday="18", bmonth="October", byear="1933", aday="18", amonth="December", ayear="1963",
                 address2="no", phone2="no", notes="no"),
         Contact(firstname="", middlename="", lastname="", nickname="",
                                      title="", company="", address="", home="", mobile="", work="", fax="", email="", homepage="",
@@ -16,7 +15,7 @@ testdata = [
     ]
 
 
-@pytest.mark.parametrize("contact", testdata)
+@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
 def test_add_contact(app, contact):
     pass
     #old_contacts = app.contact.get_contact_list()

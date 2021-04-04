@@ -247,3 +247,28 @@ class ContactHelper:
         return Contact(home=home, mobile=mobile, work=work,
                        phone2=phone2)
 
+    def add_contact_to_group(self, contact, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_name("to_group").click()
+        for in_group in wd.find_elements_by_xpath("//select[@name='to_group']//option"):
+            if in_group.get_attribute("value") == group.id:
+                in_group.click()
+        wd.find_element_by_name("add").click()
+        # return
+        self.app.open_home_page()
+        self.contact_cache = None
+
+    def del_contact_from_group(self, contact, group):
+        wd = self.app.wd
+        # выбрать группу из выпадающего списка
+        for in_group in wd.find_elements_by_xpath("//select[@name='group']//option"):
+            if in_group.get_attribute("value") == group.id:
+                wd.find_element_by_name("group").click()
+                in_group.click()
+                break
+        self.select_contact_by_id(contact.id)
+        wd.find_element_by_name("remove").click()
+        # return
+        self.app.open_home_page()
+        self.contact_cache = None

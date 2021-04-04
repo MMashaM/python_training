@@ -133,6 +133,32 @@ class ContactHelper:
         self.app.return_to_homepage()
         self.contact_cache = None
 
+    def modify_contact_by_id(self, id, contact):
+        wd = self.app.wd
+        # self.app.return_to_homepage()
+        # self.open_home_page()
+        # select first contact
+        # wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_id(id)
+        # submit edit
+        #wd.find_elements_by_xpath("(//img[@alt='Edit'])").click()
+        wd.find_element_by_xpath("//img[@title='Edit']//parent::a[contains(@href,'id=" + id + "')]").click()
+        # wd.find_element_by_name("firstname").click()
+        # wd.find_element_by_name("firstname").clear()
+        # wd.find_element_by_name("firstname").send_keys(contact.firstname)
+        # wd.find_element_by_name("middlename").click()
+        # wd.find_element_by_name("middlename").clear()
+        # wd.find_element_by_name("middlename").send_keys(contact.middlename)
+        # wd.find_element_by_name("lastname").click()
+        # wd.find_element_by_name("lastname").clear()
+        # wd.find_element_by_name("lastname").send_keys(contact.lastname)
+        # wd.find_element_by_xpath("//form[@action='edit.php']").click()
+        self.fill_contact_form(contact)
+        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+        # wd.find_element_by_link_text("home page").click()
+        self.app.return_to_homepage()
+        self.contact_cache = None
+
     def modify_first_contact(self):
         self.modify_first_contact(0)
 

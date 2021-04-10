@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pytest_bdd import given, when, then
 from model.group import Group
 import random

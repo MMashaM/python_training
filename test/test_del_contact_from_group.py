@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from model.contact import Contact
 from model.group import Group
 import random

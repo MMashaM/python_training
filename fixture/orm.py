@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pony.orm import *
 from datetime import datetime
 from model.group import Group

@@ -1,0 +1,83 @@
+(env) D:\Masha\python\local>pip install -r requirements.txt
+Requirement already satisfied: pytest in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 1)) (6.2.3)
+Requirement already satisfied: pytest_bdd in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 2)) (3.0.2)
+Requirement already satisfied: selenium in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 3)) (3.141.0)
+Requirement already satisfied: jsonpickle in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 4)) (2.0.0)
+Requirement already satisfied: pony in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 5)) (0.7.14)
+Requirement already satisfied: pymysql in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 6)) (1.0.2)
+Requirement already satisfied: mysql-connector-python-rf in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 7)) (2.2.2)
+Requirement already satisfied: allure-pytest in d:\masha\python\local\env\lib\site-packages (from -r requirements.txt (line 8)) (2.8.40)
+Requirement already satisfied: allure-python-commons==2.8.40 in d:\masha\python\local\env\lib\site-packages (from allure-pytest->-r requirements.txt (line 8)) (2.8.40)
+Requirement already satisfied: six>=1.9.0 in d:\masha\python\local\env\lib\site-packages (from allure-pytest->-r requirements.txt (line 8)) (1.15.0)
+Requirement already satisfied: pluggy>=0.4.0 in d:\masha\python\local\env\lib\site-packages (from allure-python-commons==2.8.40->allure-pytest->-r requirements.txt (line 8)) (0.13.1)
+Requirement already satisfied: attrs>=16.0.0 in d:\masha\python\local\env\lib\site-packages (from allure-python-commons==2.8.40->allure-pytest->-r requirements.txt (line 8)) (20.3.0)
+Requirement already satisfied: colorama in d:\masha\python\local\env\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.4.4)
+Requirement already satisfied: iniconfig in d:\masha\python\local\env\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.1.1)
+Requirement already satisfied: py>=1.8.2 in d:\masha\python\local\env\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.10.0)
+Requirement already satisfied: atomicwrites>=1.0 in d:\masha\python\local\env\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.4.0)
+Requirement already satisfied: packaging in d:\masha\python\local\env\lib\site-packages (from pytest->-r requirements.txt (line 1)) (20.9)
+Requirement already satisfied: toml in d:\masha\python\local\env\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.10.2)
+Requirement already satisfied: parse-type in d:\masha\python\local\env\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (0.5.2)
+Requirement already satisfied: Mako in d:\masha\python\local\env\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (1.1.4)
+Requirement already satisfied: parse in d:\masha\python\local\env\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (1.19.0)
+Requirement already satisfied: glob2 in d:\masha\python\local\env\lib\site-packages (from pytest_bdd->-r requirements.txt (line 2)) (0.7)
+Requirement already satisfied: urllib3 in d:\masha\python\local\env\lib\site-packages (from selenium->-r requirements.txt (line 3)) (1.26.3)
+Requirement already satisfied: MarkupSafe>=0.9.2 in d:\masha\python\local\env\lib\site-packages (from Mako->pytest_bdd->-r requirements.txt (line 2)) (1.1.1)
+Requirement already satisfied: pyparsing>=2.0.2 in d:\masha\python\local\env\lib\site-packages (from packaging->pytest->-r requirements.txt (line 1)) (2.4.7)
+
+(env) D:\Masha\python\local>pytest --alluredir=allure-results ./test/test_add_group.py
+Traceback (most recent call last):
+  File "c:\python39\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "c:\python39\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\Masha\python\local\env\Scripts\pytest.exe\__main__.py", line 7, in <module>
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\config\__init__.py", line 185, in console_main
+    code = main()
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\config\__init__.py", line 143, in main
+    config = _prepareconfig(args, plugins)
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\config\__init__.py", line 318, in _prepareconfig
+    config = pluginmanager.hook.pytest_cmdline_parse(
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\hooks.py", line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\manager.py", line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\manager.py", line 84, in <lambda>
+    self._inner_hookexec = lambda hook, methods, kwargs: hook.multicall(
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\callers.py", line 203, in _multicall
+    gen.send(outcome)
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\helpconfig.py", line 100, in pytest_cmdline_parse
+    config: Config = outcome.get_result()
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\callers.py", line 80, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\callers.py", line 187, in _multicall
+    res = hook_impl.function(*args)
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\config\__init__.py", line 1003, in pytest_cmdline_parse
+    self.parse(args)
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\config\__init__.py", line 1283, in parse
+    self._preparse(args, addopts=addopts)
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\config\__init__.py", line 1172, in _preparse
+    self.pluginmanager.load_setuptools_entrypoints("pytest11")
+  File "d:\masha\python\local\env\lib\site-packages\pluggy\manager.py", line 299, in load_setuptools_entrypoints
+    plugin = ep.load()
+  File "c:\python39\lib\importlib\metadata.py", line 77, in load
+    module = import_module(match.group('module'))
+  File "c:\python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "d:\masha\python\local\env\lib\site-packages\_pytest\assertion\rewrite.py", line 170, in exec_module
+    exec(co, module.__dict__)
+  File "d:\masha\python\local\env\lib\site-packages\pytest_bdd\plugin.py", line 27, in <module>
+    def trace():
+  File "d:\masha\python\local\env\lib\site-packages\pytest_bdd\steps.py", line 189, in decorator
+    contribute_to_module(
+  File "d:\masha\python\local\env\lib\site-packages\pytest_bdd\steps.py", line 262, in contribute_to_module
+    func = recreate_function(func, module=module)
+  File "d:\masha\python\local\env\lib\site-packages\pytest_bdd\steps.py", line 246, in recreate_function
+    set_code(func, CodeType(*args))
+TypeError: an integer is required (got type bytes)
+
+(env) D:\Masha\python\local>

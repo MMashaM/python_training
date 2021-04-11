@@ -1,0 +1,67 @@
+{
+  "uid" : "59c7b87a51c591c3",
+  "name" : "test_add_contact_to_group.test_add_contact_to_group",
+  "fullName" : "test.test_add_contact_to_group.test_add_contact_to_group",
+  "historyId" : "df8c0f3c43d99f2094ce070221458ab7",
+  "time" : {
+    "start" : 1618131033727,
+    "stop" : 1618131035655,
+    "duration" : 1928
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 360:name2:header2:footer2 in []\n +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>>(352:firstnameD[ 0%]i:lastnamewdoA=iZVy)\n +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>> = <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>.get_groups_for_contact",
+  "statusTrace" : "app = <fixture.application.Application object at 0x000001AA4B87B7F0>\normdb = <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>\n\n    def test_add_contact_to_group(app, ormdb):\n        # проверка предусловий\n        if len(ormdb.get_contact_list()) == 0:\n            app.contact.create(Contact(firstname=\"test\"))\n        if len(ormdb.get_group_list()) == 0:\n            app.group.create(Group(name=\"test\"))\n        exception_group_list = []\n        contact = random.choice(ormdb.get_contact_list())\n        list_groups_for_contact = ormdb.get_groups_for_contact(contact)\n        list_all_groups = ormdb.get_group_list()\n        for g in list_all_groups:\n            if g not in list_groups_for_contact:\n                exception_group_list.append(g)\n        if len(exception_group_list) == 0:\n            group = list_groups_for_contact[random.randrange(len(list_groups_for_contact))]\n            app.contact.remove_from_group(contact, group)\n        else:\n            index = random.randrange(len(exception_group_list))\n            group = list_all_groups[index]\n        app.contact.add_contact_to_group(contact, group)\n        # проверяем, что контакт добавлен в группу\n>       assert group in ormdb.get_groups_for_contact(contact)\nE       assert 360:name2:header2:footer2 in []\nE        +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>>(352:firstnameD[ 0%]i:lastnamewdoA=iZVy)\nE        +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>> = <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>.get_groups_for_contact\n\ntest\\test_add_contact_to_group.py:28: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-9MR3F4L"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "4660-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test"
+  }, {
+    "name" : "testClass",
+    "value" : "test"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_add_contact_to_group.test_add_contact_to_group"
+  }, {
+    "name" : "package",
+    "value" : "test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "59c7b87a51c591c3.json",
+  "parameterValues" : [ ]
+}

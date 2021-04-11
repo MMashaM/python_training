@@ -1,0 +1,61 @@
+{
+  "uid" : "af803ec229aaebaa",
+  "name" : "test_del_contact.test_delete_some_contact",
+  "fullName" : "test.test_del_contact.test_delete_some_contact",
+  "historyId" : "e64781251dc60cc6ca82a4d898decb93",
+  "time" : {
+    "start" : 1618131042688,
+    "stop" : 1618131043963,
+    "duration" : 1275
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-9MR3F4L"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "4660-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test"
+  }, {
+    "name" : "testClass",
+    "value" : "test"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_del_contact.test_delete_some_contact"
+  }, {
+    "name" : "package",
+    "value" : "test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "af803ec229aaebaa.json",
+  "parameterValues" : [ ]
+}

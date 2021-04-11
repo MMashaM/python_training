@@ -1,0 +1,736 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1618131023353" stop="1618131051273">
+  <name>test</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1618131023353" status="passed" stop="1618131030760">
+      <name>test_add_contact.test_add_contact[None::]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131030778" status="passed" stop="1618131032250">
+      <name>test_add_contact.test_add_contact[None:firstnamebX"9P6!o`:lastnamebc]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131032269" status="passed" stop="1618131033710">
+      <name>test_add_contact.test_add_contact[None:firstnamenyV n'p,:lastnamef]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131033727" status="failed" stop="1618131035655">
+      <name>test_add_contact_to_group.test_add_contact_to_group</name>
+      <failure>
+        <message>AssertionError: assert 360:name2:header2:footer2 in []
+ +  where [] = &lt;bound method get_groups_for_contact of &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;&gt;(352:firstnameD[ 0%]i:lastnamewdoA=iZVy)
+ +    where &lt;bound method get_groups_for_contact of &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;&gt; = &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;.get_groups_for_contact</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+ormdb = &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;
+
+    def test_add_contact_to_group(app, ormdb):
+        # проверка предусловий
+        if len(ormdb.get_contact_list()) == 0:
+            app.contact.create(Contact(firstname="test"))
+        if len(ormdb.get_group_list()) == 0:
+            app.group.create(Group(name="test"))
+        exception_group_list = []
+        contact = random.choice(ormdb.get_contact_list())
+        list_groups_for_contact = ormdb.get_groups_for_contact(contact)
+        list_all_groups = ormdb.get_group_list()
+        for g in list_all_groups:
+            if g not in list_groups_for_contact:
+                exception_group_list.append(g)
+        if len(exception_group_list) == 0:
+            group = list_groups_for_contact[random.randrange(len(list_groups_for_contact))]
+            app.contact.remove_from_group(contact, group)
+        else:
+            index = random.randrange(len(exception_group_list))
+            group = list_all_groups[index]
+        app.contact.add_contact_to_group(contact, group)
+        # проверяем, что контакт добавлен в группу
+&gt;       assert group in ormdb.get_groups_for_contact(contact)
+E       assert 360:name2:header2:footer2 in []
+E        +  where [] = &lt;bound method get_groups_for_contact of &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;&gt;(352:firstnameD[ 0%]i:lastnamewdoA=iZVy)
+E        +    where &lt;bound method get_groups_for_contact of &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;&gt; = &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;.get_groups_for_contact
+
+test\test_add_contact_to_group.py:28: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131035677" status="failed" stop="1618131037080">
+      <name>test_add_group.test_add_group[None:::]</name>
+      <failure>
+        <message>TypeError: id_or_max() missing 1 required positional argument: 'self'</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+db = &lt;fixture.db.DbFixture object at 0x000001AA4B779700&gt;, json_groups = None:::
+
+    def test_add_group(app, db, json_groups): #, check_ui):
+        group = json_groups
+        with pytest.allure.step('Given a group list'):
+            old_groups = db.get_group_list()
+        with pytest.allure.step('When I add a group %s to the list' % group):
+            app.group.create(group)
+        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max()) == sorted(new_groups, key=Group.id_or_max())
+E           TypeError: id_or_max() missing 1 required positional argument: 'self'
+
+test\test_add_group.py:15: TypeError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618131035965" status="passed" stop="1618131035983">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618131035990" status="passed" stop="1618131037041">
+          <name>When I add a group None::: to the list</name>
+          <title>When I add a group None::: to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618131037048" status="failed" stop="1618131037067">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618131037099" status="failed" stop="1618131038166">
+      <name>test_add_group.test_add_group[None:namet:headerT&gt;=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#]</name>
+      <failure>
+        <message>TypeError: id_or_max() missing 1 required positional argument: 'self'</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+db = &lt;fixture.db.DbFixture object at 0x000001AA4B779700&gt;
+json_groups = None:namet:headerT&gt;=#DN_d~O\wg@i4pW;:footer+di1S 'KktTz=Wdz`#
+
+    def test_add_group(app, db, json_groups): #, check_ui):
+        group = json_groups
+        with pytest.allure.step('Given a group list'):
+            old_groups = db.get_group_list()
+        with pytest.allure.step('When I add a group %s to the list' % group):
+            app.group.create(group)
+        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max()) == sorted(new_groups, key=Group.id_or_max())
+E           TypeError: id_or_max() missing 1 required positional argument: 'self'
+
+test\test_add_group.py:15: TypeError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618131037135" status="passed" stop="1618131037154">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618131037161" status="passed" stop="1618131038138">
+          <name>When I add a group None:namet:headerT&gt;=#DN_d~O\wg@i4pW;:footer+di1S 'KktTz=Wdz`# to the list</name>
+          <title>When I add a group None:namet:headerT&gt;=#DN_d~O\wg@i4pW;:footer+di1S 'KktTz=Wdz`# to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618131038146" status="failed" stop="1618131038164">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618131038184" status="failed" stop="1618131039249">
+      <name>test_add_group.test_add_group[None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l]</name>
+      <failure>
+        <message>TypeError: id_or_max() missing 1 required positional argument: 'self'</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+db = &lt;fixture.db.DbFixture object at 0x000001AA4B779700&gt;
+json_groups = None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l
+
+    def test_add_group(app, db, json_groups): #, check_ui):
+        group = json_groups
+        with pytest.allure.step('Given a group list'):
+            old_groups = db.get_group_list()
+        with pytest.allure.step('When I add a group %s to the list' % group):
+            app.group.create(group)
+        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):
+            new_groups = db.get_group_list()
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max()) == sorted(new_groups, key=Group.id_or_max())
+E           TypeError: id_or_max() missing 1 required positional argument: 'self'
+
+test\test_add_group.py:15: TypeError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1618131038220" status="passed" stop="1618131038238">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618131038245" status="passed" stop="1618131039220">
+          <name>When I add a group None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l to the list</name>
+          <title>When I add a group None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1618131039228" status="failed" stop="1618131039247">
+          <name>Then the new group list is equal to the old list with the added group</name>
+          <title>Then the new group list is equal to the old list with the added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1618131039267" status="failed" stop="1618131041448">
+      <name>test_contacts_home_page.test_contacts_home_page</name>
+      <failure>
+        <message>AssertionError: assert '' == None
+ +  where '' = 301:firstnameN:lastname.address
+ +  and   None = 301:firstnameN:lastname.address</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+db = &lt;fixture.db.DbFixture object at 0x000001AA4B779700&gt;
+
+    def test_contacts_home_page(app, db):
+        if len(db.get_contact_list()) == 0:
+            app.contact.create(Contact(firstname="test"))
+        contact_from_home_page = app.contact.get_contact_list()
+        contact_from_db = db.get_contact_list()
+        assert len(contact_from_home_page) == len(contact_from_db)
+        #assert sorted(contact_from_home_page, key=Contact.id_or_max()) == sorted(contact_from_db, key=Contact.id_or_max())
+        for i in range(len(contact_from_home_page)):
+            contact_from_home_page_by_index = sorted(app.contact.get_contact_list(), key=Contact.id_or_max)[i]
+            contact_from_db_by_index = db.get_contact_list()[i]
+            assert contact_from_home_page_by_index.firstname == contact_from_db_by_index.firstname
+            assert contact_from_home_page_by_index.lastname == contact_from_db_by_index.lastname
+&gt;           assert contact_from_home_page_by_index.address == contact_from_db_by_index.address
+E           AssertionError: assert '' == None
+E            +  where '' = 301:firstnameN:lastname.address
+E            +  and   None = 301:firstnameN:lastname.address
+
+test\test_contacts_home_page.py:18: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131041466" status="failed" stop="1618131042670">
+      <name>test_db_matches_ui.test_group_list</name>
+      <failure>
+        <message>AssertionError: assert False</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+db = &lt;fixture.db.DbFixture object at 0x000001AA4B779700&gt;
+
+    def test_group_list(app, db):
+        print(timeit(lambda: app.group.get_group_list(), number=1))
+        def clean(group):
+            return Group(id=group.id, name=group.name.strip())
+        print(timeit(lambda: map(clean, db.get_group_list()), number=1000))
+&gt;       assert False #sorted(ui_list, key=Group.id_or_max) == sorted(db_list, key=Group.id_or_max)
+E       assert False
+
+test\test_db_matches_ui.py:11: AssertionError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="30f2e0de-ad89-45c2-8e01-b96477d42a57-attachment.txt" title="Captured stdout call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131042688" status="passed" stop="1618131043963">
+      <name>test_del_contact.test_delete_some_contact</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131043983" status="failed" stop="1618131046427">
+      <name>test_del_contact_from_group.test_del_contact_from_group</name>
+      <failure>
+        <message>NoSuchElementException: Message: Unable to locate element: input[id='346']
+</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+ormdb = &lt;fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0&gt;
+
+    def test_del_contact_from_group(app, ormdb):
+        if len(ormdb.get_contact_list()) == 0:
+            app.contact.create(Contact(firstname="test"))
+        if len(ormdb.get_group_list()) == 0:
+            app.group.create(Group(name="test"))
+        contact = random.choice(ormdb.get_contact_list())
+        list_groups_for_contact = ormdb.get_groups_for_contact(contact)
+        if (len(list_groups_for_contact)) == 0:
+            group = random.choice(ormdb.get_group_list())
+            app.contact.add_contact_to_group(contact, group)
+        else:
+            index = random.randrange(len(list_groups_for_contact))
+            group = list_groups_for_contact[index]
+&gt;       app.contact.del_contact_from_group(contact, group)
+
+test\test_del_contact_from_group.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+fixture\contact.py:271: in del_contact_from_group
+    self.select_contact_by_id(contact.id)
+fixture\contact.py:110: in select_contact_by_id
+    wd.find_element_by_css_selector("input[id='%s']" % id).click()
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:598: in find_element_by_css_selector
+    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:976: in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001AA4B87B2E0&gt;
+response = {'status': 404, 'value': '{"value":{"error":"no such element","message":"Unable to locate element: input[id=\'346\']",...ror@chrome://marionette/content/error.js:393:5\\nelement.find/&lt;/&lt;@chrome://marionette/content/element.js:456:16\\n"}}'}
+
+    def check_response(self, response):
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: input[id='346']
+
+env\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: NoSuchElementException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131046446" status="passed" stop="1618131047001">
+      <name>test_del_group.test_delete_some_group</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131047019" status="failed" stop="1618131047079">
+      <name>test_modify_contact.test_modify_first_contact</name>
+      <failure>
+        <message>NoSuchElementException: Message: Unable to locate element: input[id='336']
+</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x000001AA4B87B7F0&gt;
+db = &lt;fixture.db.DbFixture object at 0x000001AA4B779700&gt;, check_ui = False
+
+    def test_modify_first_contact(app, db, check_ui):
+        if len(db.get_contact_list()) == 0:
+            app.contact.create(Contact(firstname="test"))
+        old_contacts = db.get_contact_list()
+        contact = random.choice(old_contacts)
+&gt;       app.contact.modify_contact_by_id(contact.id, contact)
+
+test\test_modify_contact.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+fixture\contact.py:143: in modify_contact_by_id
+    self.select_contact_by_id(id)
+fixture\contact.py:110: in select_contact_by_id
+    wd.find_element_by_css_selector("input[id='%s']" % id).click()
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:598: in find_element_by_css_selector
+    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:976: in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001AA4B87B2E0&gt;
+response = {'status': 404, 'value': '{"value":{"error":"no such element","message":"Unable to locate element: input[id=\'336\']",...ror@chrome://marionette/content/error.js:393:5\\nelement.find/&lt;/&lt;@chrome://marionette/content/element.js:456:16\\n"}}'}
+
+    def check_response(self, response):
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: input[id='336']
+
+env\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: NoSuchElementException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131047097" status="passed" stop="1618131048308">
+      <name>test_modify_group.test_modify_group_name</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1618131048325" status="passed" stop="1618131051273">
+      <name>test_phones.test_phones_on_home_page</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="4660-MainThread"/>
+        <label name="host" value="DESKTOP-9MR3F4L"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

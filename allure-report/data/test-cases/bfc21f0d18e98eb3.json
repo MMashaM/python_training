@@ -1,0 +1,85 @@
+{
+  "uid" : "bfc21f0d18e98eb3",
+  "name" : "test_db_matches_ui.test_group_list",
+  "fullName" : "test.test_db_matches_ui.test_group_list",
+  "historyId" : "b71997f98d56bcb10f5b639e95e3177f",
+  "time" : {
+    "start" : 1618131041466,
+    "stop" : 1618131042670,
+    "duration" : 1204
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False",
+  "statusTrace" : "app = <fixture.application.Application object at 0x000001AA4B87B7F0>\ndb = <fixture.db.DbFixture object at 0x000001AA4B779700>\n\n    def test_group_list(app, db):\n        print(timeit(lambda: app.group.get_group_list(), number=1))\n        def clean(group):\n            return Group(id=group.id, name=group.name.strip())\n        print(timeit(lambda: map(clean, db.get_group_list()), number=1000))\n>       assert False #sorted(ui_list, key=Group.id_or_max) == sorted(db_list, key=Group.id_or_max)\nE       assert False\n\ntest\\test_db_matches_ui.py:11: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert False",
+    "statusTrace" : "app = <fixture.application.Application object at 0x000001AA4B87B7F0>\ndb = <fixture.db.DbFixture object at 0x000001AA4B779700>\n\n    def test_group_list(app, db):\n        print(timeit(lambda: app.group.get_group_list(), number=1))\n        def clean(group):\n            return Group(id=group.id, name=group.name.strip())\n        print(timeit(lambda: map(clean, db.get_group_list()), number=1000))\n>       assert False #sorted(ui_list, key=Group.id_or_max) == sorted(db_list, key=Group.id_or_max)\nE       assert False\n\ntest\\test_db_matches_ui.py:11: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "56c537245cd626b0",
+      "name" : "Captured stdout call",
+      "source" : "56c537245cd626b0.txt",
+      "type" : "text/plain",
+      "size" : 39
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-9MR3F4L"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "4660-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test"
+  }, {
+    "name" : "testClass",
+    "value" : "test"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_db_matches_ui.test_group_list"
+  }, {
+    "name" : "package",
+    "value" : "test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "bfc21f0d18e98eb3.json",
+  "parameterValues" : [ ]
+}

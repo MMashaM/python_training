@@ -1,0 +1,125 @@
+{
+  "uid" : "b39c5df0ebdcef27",
+  "name" : "test_add_group.test_add_group[None:namet:headerT>=#DN_d~O\\\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#]",
+  "fullName" : "test.test_add_group.test_add_group[None:namet:headerT>=#DN_d~O\\\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#]",
+  "historyId" : "3aad84d226fcff7e84765deabfb0f538",
+  "time" : {
+    "start" : 1618131037099,
+    "stop" : 1618131038166,
+    "duration" : 1067
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "TypeError: id_or_max() missing 1 required positional argument: 'self'",
+  "statusTrace" : "app = <fixture.application.Application object at 0x000001AA4B87B7F0>\ndb = <fixture.db.DbFixture object at 0x000001AA4B779700>\njson_groups = None:namet:headerT>=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#\n\n    def test_add_group(app, db, json_groups): #, check_ui):\n        group = json_groups\n        with pytest.allure.step('Given a group list'):\n            old_groups = db.get_group_list()\n        with pytest.allure.step('When I add a group %s to the list' % group):\n            app.group.create(group)\n        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):\n            new_groups = db.get_group_list()\n            old_groups.append(group)\n>           assert sorted(old_groups, key=Group.id_or_max()) == sorted(new_groups, key=Group.id_or_max())\nE           TypeError: id_or_max() missing 1 required positional argument: 'self'\n\ntest\\test_add_group.py:15: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "TypeError: id_or_max() missing 1 required positional argument: 'self'",
+    "statusTrace" : "app = <fixture.application.Application object at 0x000001AA4B87B7F0>\ndb = <fixture.db.DbFixture object at 0x000001AA4B779700>\njson_groups = None:namet:headerT>=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#\n\n    def test_add_group(app, db, json_groups): #, check_ui):\n        group = json_groups\n        with pytest.allure.step('Given a group list'):\n            old_groups = db.get_group_list()\n        with pytest.allure.step('When I add a group %s to the list' % group):\n            app.group.create(group)\n        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):\n            new_groups = db.get_group_list()\n            old_groups.append(group)\n>           assert sorted(old_groups, key=Group.id_or_max()) == sorted(new_groups, key=Group.id_or_max())\nE           TypeError: id_or_max() missing 1 required positional argument: 'self'\n\ntest\\test_add_group.py:15: TypeError",
+    "steps" : [ {
+      "name" : "Given a group list",
+      "time" : {
+        "start" : 1618131037135,
+        "stop" : 1618131037154,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When I add a group None:namet:headerT>=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`# to the list",
+      "time" : {
+        "start" : 1618131037161,
+        "stop" : 1618131038138,
+        "duration" : 977
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Then the new group list is equal to the old list with the added group",
+      "time" : {
+        "start" : 1618131038146,
+        "stop" : 1618131038164,
+        "duration" : 18
+      },
+      "status" : "failed",
+      "statusMessage" : "app = <fixture.application.Application object at 0x000001AA4B87B7F0>\ndb = <fixture.db.DbFixture object at 0x000001AA4B779700>\njson_groups = None:namet:headerT>=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#\n\n    def test_add_group(app, db, json_groups): #, check_ui):\n        group = json_groups\n        with pytest.allure.step('Given a group list'):\n            old_groups = db.get_group_list()\n        with pytest.allure.step('When I add a group %s to the list' % group):\n            app.group.create(group)\n        with pytest.allure.step('Then the new group list is equal to the old list with the added group'):\n            new_groups = db.get_group_list()\n            old_groups.append(group)\n>           assert sorted(old_groups, key=Group.id_or_max()) == sorted(new_groups, key=Group.id_or_max())\nE           TypeError: id_or_max() missing 1 required positional argument: 'self'\n\ntest\\test_add_group.py:15: TypeError",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "hasContent" : true,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-9MR3F4L"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "4660-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test"
+  }, {
+    "name" : "testClass",
+    "value" : "test"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_add_group.test_add_group[None:namet:headerT>=#DN_d~O\\\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#]"
+  }, {
+    "name" : "package",
+    "value" : "test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "b39c5df0ebdcef27.json",
+  "parameterValues" : [ ]
+}

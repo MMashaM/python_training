@@ -1,0 +1,119 @@
+{
+  "uid" : "888e9b96f629eb67",
+  "name" : "test_add_contact_to_group",
+  "fullName" : "test.test_add_contact_to_group#test_add_contact_to_group",
+  "historyId" : "38ec08ef9d40e9a5f581571d44033af1",
+  "time" : {
+    "start" : 1618131531758,
+    "stop" : 1618131533325,
+    "duration" : 1567
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 368:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l in []\n +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>>(324:firstnamesdpd:lastname=ZS7)\n +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>> = <fixture.orm.ORMFixture object at 0x00000191926A0A60>.get_groups_for_contact",
+  "statusTrace" : "app = <fixture.application.Application object at 0x0000019192632CD0>\normdb = <fixture.orm.ORMFixture object at 0x00000191926A0A60>\n\n    def test_add_contact_to_group(app, ormdb):\n        # проверка предусловий\n        if len(ormdb.get_contact_list()) == 0:\n            app.contact.create(Contact(firstname=\"test\"))\n        if len(ormdb.get_group_list()) == 0:\n            app.group.create(Group(name=\"test\"))\n        exception_group_list = []\n        contact = random.choice(ormdb.get_contact_list())\n        list_groups_for_contact = ormdb.get_groups_for_contact(contact)\n        list_all_groups = ormdb.get_group_list()\n        for g in list_all_groups:\n            if g not in list_groups_for_contact:\n                exception_group_list.append(g)\n        if len(exception_group_list) == 0:\n            group = list_groups_for_contact[random.randrange(len(list_groups_for_contact))]\n            app.contact.remove_from_group(contact, group)\n        else:\n            index = random.randrange(len(exception_group_list))\n            group = list_all_groups[index]\n        app.contact.add_contact_to_group(contact, group)\n        # проверяем, что контакт добавлен в группу\n>       assert group in ormdb.get_groups_for_contact(contact)\nE       assert 368:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l in []\nE        +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>>(324:firstnamesdpd:lastname=ZS7)\nE        +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>> = <fixture.orm.ORMFixture object at 0x00000191926A0A60>.get_groups_for_contact\n\ntest\\test_add_contact_to_group.py:28: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "ormdb",
+    "time" : {
+      "start" : 1618131531469,
+      "stop" : 1618131531492,
+      "duration" : 23
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1618131521129,
+      "stop" : 1618131521129,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1618131531492,
+      "stop" : 1618131531758,
+      "duration" : 266
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1618131545373,
+      "stop" : 1618131546006,
+      "duration" : 633
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_contact_to_group"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-9MR3F4L"
+  }, {
+    "name" : "thread",
+    "value" : "7688-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_contact_to_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "888e9b96f629eb67.json",
+  "parameterValues" : [ ]
+}

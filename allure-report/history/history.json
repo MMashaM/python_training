@@ -1,0 +1,587 @@
+{
+  "652f0d622d4d9b905f677cc3b1dc7942" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "be6bec5ac9fb24de",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131542532,
+        "stop" : 1618131545372,
+        "duration" : 2840
+      }
+    } ]
+  },
+  "2e8f9db6a30910cf988e7ee0a344bce6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "20bf9dbe242fa9d8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131528801,
+        "stop" : 1618131529983,
+        "duration" : 1182
+      }
+    } ]
+  },
+  "55238afbbb239c920ec59b4158c9c36c" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "be71472ff689b07f",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert '' == None\n +  where '' = 301:firstnameN:lastname.address\n +  and   None = 301:firstnameN:lastname.address",
+      "time" : {
+        "start" : 1618131534510,
+        "stop" : 1618131536601,
+        "duration" : 2091
+      }
+    } ]
+  },
+  "2d7ea5791288a8ebebd5b70fd1e69039" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "128a312310f2cc07",
+      "status" : "failed",
+      "statusDetails" : "NoSuchElementException: Message: Unable to locate element: input[id='336']\n",
+      "time" : {
+        "start" : 1618131047019,
+        "stop" : 1618131047079,
+        "duration" : 60
+      }
+    } ]
+  },
+  "b71997f98d56bcb10f5b639e95e3177f" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c2693d3d4dcd7b30",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False",
+      "time" : {
+        "start" : 1618131041466,
+        "stop" : 1618131042670,
+        "duration" : 1204
+      }
+    } ]
+  },
+  "d4db46b5a5d4397c149bf170581cb2a9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ede1128de4691148",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131030778,
+        "stop" : 1618131032250,
+        "duration" : 1472
+      }
+    } ]
+  },
+  "fb88172ee8c5f1923075b70aed6097e9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1178ca8da143aa60",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1618131534220,
+        "stop" : 1618131534220,
+        "duration" : 0
+      }
+    } ]
+  },
+  "f7c945a5d86625868f1c08933c3a577e" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f00fb70d9979775b",
+      "status" : "failed",
+      "statusDetails" : "NoSuchElementException: Message: Unable to locate element: input[id='346']\n",
+      "time" : {
+        "start" : 1618131043983,
+        "stop" : 1618131046427,
+        "duration" : 2444
+      }
+    } ]
+  },
+  "7535c7491be57589002b7ab592891a84" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "58f52ed0070d809b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131032269,
+        "stop" : 1618131033710,
+        "duration" : 1441
+      }
+    } ]
+  },
+  "5b5521a00ad53fe0491616d8ff4d853b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5fe709d8b9437d4f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131046446,
+        "stop" : 1618131047001,
+        "duration" : 555
+      }
+    } ]
+  },
+  "238b7bbf79e23f3a9d3d48698699b464" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "84612b5498be02e",
+      "status" : "failed",
+      "statusDetails" : "TypeError: id_or_max() missing 1 required positional argument: 'self'",
+      "time" : {
+        "start" : 1618131038184,
+        "stop" : 1618131039249,
+        "duration" : 1065
+      }
+    } ]
+  },
+  "38ec08ef9d40e9a5f581571d44033af1" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "888e9b96f629eb67",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert 368:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l in []\n +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>>(324:firstnamesdpd:lastname=ZS7)\n +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>> = <fixture.orm.ORMFixture object at 0x00000191926A0A60>.get_groups_for_contact",
+      "time" : {
+        "start" : 1618131531758,
+        "stop" : 1618131533325,
+        "duration" : 1567
+      }
+    } ]
+  },
+  "9ff7239fd478405ed9ad821c9e405dce" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a49ada7e336bd45",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131047097,
+        "stop" : 1618131048308,
+        "duration" : 1211
+      }
+    } ]
+  },
+  "46a86e72dd5b7694b0c25bf756bdea38" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "802c7cc2ccf109bb",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: input[id='301']",
+      "time" : {
+        "start" : 1618131541241,
+        "stop" : 1618131541245,
+        "duration" : 4
+      }
+    } ]
+  },
+  "27a1c463cfb8ffdb159398633e23e9be" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "74baba60878497c2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131023353,
+        "stop" : 1618131030760,
+        "duration" : 7407
+      }
+    } ]
+  },
+  "99e5a0e109baef4301f97f8c2c73b526" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "84b4174b2cb4e6b4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131541299,
+        "stop" : 1618131542497,
+        "duration" : 1198
+      }
+    } ]
+  },
+  "f4f569d06e801e1682377a866bb7b03e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4fb195cafa0c8bd4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131540715,
+        "stop" : 1618131541210,
+        "duration" : 495
+      }
+    } ]
+  },
+  "88e71eba3883d6b7c4faf1aa309967a5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ac8803f00903de00",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1618131533649,
+        "stop" : 1618131533650,
+        "duration" : 1
+      }
+    } ]
+  },
+  "f17f29013de8c74eab7a07b09922dc90" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5274b06560fa417f",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False",
+      "time" : {
+        "start" : 1618131536871,
+        "stop" : 1618131537713,
+        "duration" : 842
+      }
+    } ]
+  },
+  "7a1464d39dbce9e541d7e6ba8206d956" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "15456fa5302d9cde",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131530262,
+        "stop" : 1618131531462,
+        "duration" : 1200
+      }
+    } ]
+  },
+  "fe6e32bdf007e77a689d7f2f26ed305b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "64a15adf9f3e43d0",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1618131533931,
+        "stop" : 1618131533931,
+        "duration" : 0
+      }
+    } ]
+  },
+  "3a01bcebf2fb20e000efb7cdae1d6aaf" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b215cf012070c003",
+      "status" : "failed",
+      "statusDetails" : "TypeError: id_or_max() missing 1 required positional argument: 'self'",
+      "time" : {
+        "start" : 1618131035677,
+        "stop" : 1618131037080,
+        "duration" : 1403
+      }
+    } ]
+  },
+  "cd07c322e7b98cc176cc89880ae0f977" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7f1b97996cb6df5b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131539262,
+        "stop" : 1618131540448,
+        "duration" : 1186
+      }
+    } ]
+  },
+  "df8c0f3c43d99f2094ce070221458ab7" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f3548727241b3cba",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert 360:name2:header2:footer2 in []\n +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>>(352:firstnameD[ 0%]i:lastnamewdoA=iZVy)\n +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>> = <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>.get_groups_for_contact",
+      "time" : {
+        "start" : 1618131033727,
+        "stop" : 1618131035655,
+        "duration" : 1928
+      }
+    } ]
+  },
+  "10382dcff93d603e73cf274c7a59cb75" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "752223e275d55860",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131048325,
+        "stop" : 1618131051273,
+        "duration" : 2948
+      }
+    } ]
+  },
+  "a877f2fa4d88dd22d8b6bcc9a2acd97c" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "41ac3da2720bca77",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert '' == None\n +  where '' = 301:firstnameN:lastname.address\n +  and   None = 301:firstnameN:lastname.address",
+      "time" : {
+        "start" : 1618131039267,
+        "stop" : 1618131041448,
+        "duration" : 2181
+      }
+    } ]
+  },
+  "3aad84d226fcff7e84765deabfb0f538" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fa380da2ab9e0e97",
+      "status" : "failed",
+      "statusDetails" : "TypeError: id_or_max() missing 1 required positional argument: 'self'",
+      "time" : {
+        "start" : 1618131037099,
+        "stop" : 1618131038166,
+        "duration" : 1067
+      }
+    } ]
+  },
+  "19f46f64c1bcfc24925d2d3e4ab76118" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d55d4774bb897b5b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131527293,
+        "stop" : 1618131528525,
+        "duration" : 1232
+      }
+    } ]
+  },
+  "e64781251dc60cc6ca82a4d898decb93" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "af803ec229aaebaa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131042688,
+        "stop" : 1618131043963,
+        "duration" : 1275
+      }
+    } ]
+  },
+  "8ecdfc6bebb59bf305e56cbad2e7b30c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "78cd8546a22a660b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618131537740,
+        "stop" : 1618131538981,
+        "duration" : 1241
+      }
+    } ]
+  }
+}

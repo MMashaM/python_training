@@ -1,0 +1,244 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 360:name2:header2:footer2 in []\n +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>>(352:firstnameD[ 0%]i:lastnamewdoA=iZVy)\n +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>> = <fixture.orm.ORMFixture object at 0x000001AA4B8C0AC0>.get_groups_for_contact",
+      "children" : [ {
+        "name" : "test_add_contact_to_group.test_add_contact_to_group",
+        "uid" : "f3548727241b3cba",
+        "parentUid" : "db52d2ed01129b83470e594f168884d5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131033727,
+          "stop" : 1618131035655,
+          "duration" : 1928
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "db52d2ed01129b83470e594f168884d5"
+    }, {
+      "name" : "TypeError: id_or_max() missing 1 required positional argument: 'self'",
+      "children" : [ {
+        "name" : "test_add_group.test_add_group[None:::]",
+        "uid" : "b215cf012070c003",
+        "parentUid" : "8411f8ac384e15f1b7972da32fe78c5c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131035677,
+          "stop" : 1618131037080,
+          "duration" : 1403
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_group.test_add_group[None:namet:headerT>=#DN_d~O\\\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#]",
+        "uid" : "fa380da2ab9e0e97",
+        "parentUid" : "8411f8ac384e15f1b7972da32fe78c5c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131037099,
+          "stop" : 1618131038166,
+          "duration" : 1067
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_group.test_add_group[None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l]",
+        "uid" : "84612b5498be02e",
+        "parentUid" : "8411f8ac384e15f1b7972da32fe78c5c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131038184,
+          "stop" : 1618131039249,
+          "duration" : 1065
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8411f8ac384e15f1b7972da32fe78c5c"
+    }, {
+      "name" : "AssertionError: assert '' == None\n +  where '' = 301:firstnameN:lastname.address\n +  and   None = 301:firstnameN:lastname.address",
+      "children" : [ {
+        "name" : "test_contacts_home_page.test_contacts_home_page",
+        "uid" : "41ac3da2720bca77",
+        "parentUid" : "8d9c773c54f853e5bf65c89e32e369b0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131039267,
+          "stop" : 1618131041448,
+          "duration" : 2181
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_contacts_home_page",
+        "uid" : "be71472ff689b07f",
+        "parentUid" : "8d9c773c54f853e5bf65c89e32e369b0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131534510,
+          "stop" : 1618131536601,
+          "duration" : 2091
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8d9c773c54f853e5bf65c89e32e369b0"
+    }, {
+      "name" : "AssertionError: assert False",
+      "children" : [ {
+        "name" : "test_db_matches_ui.test_group_list",
+        "uid" : "c2693d3d4dcd7b30",
+        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131041466,
+          "stop" : 1618131042670,
+          "duration" : 1204
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_group_list",
+        "uid" : "5274b06560fa417f",
+        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131536871,
+          "stop" : 1618131537713,
+          "duration" : 842
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8d89788b03808d3beec6ddf8e7d75f3d"
+    }, {
+      "name" : "NoSuchElementException: Message: Unable to locate element: input[id='346']\n",
+      "children" : [ {
+        "name" : "test_del_contact_from_group.test_del_contact_from_group",
+        "uid" : "f00fb70d9979775b",
+        "parentUid" : "290ecbb83db2db41b505a759c9d90c60",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131043983,
+          "stop" : 1618131046427,
+          "duration" : 2444
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "290ecbb83db2db41b505a759c9d90c60"
+    }, {
+      "name" : "NoSuchElementException: Message: Unable to locate element: input[id='336']\n",
+      "children" : [ {
+        "name" : "test_modify_contact.test_modify_first_contact",
+        "uid" : "128a312310f2cc07",
+        "parentUid" : "f93b0c6c2725707baf2f8bf97716a6f5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131047019,
+          "stop" : 1618131047079,
+          "duration" : 60
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f93b0c6c2725707baf2f8bf97716a6f5"
+    }, {
+      "name" : "AssertionError: assert 368:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l in []\n +  where [] = <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>>(324:firstnamesdpd:lastname=ZS7)\n +    where <bound method get_groups_for_contact of <fixture.orm.ORMFixture object at 0x00000191926A0A60>> = <fixture.orm.ORMFixture object at 0x00000191926A0A60>.get_groups_for_contact",
+      "children" : [ {
+        "name" : "test_add_contact_to_group",
+        "uid" : "888e9b96f629eb67",
+        "parentUid" : "3d3d4f0916ba99eeb5fb1e7531c789e9",
+        "status" : "failed",
+        "time" : {
+          "start" : 1618131531758,
+          "stop" : 1618131533325,
+          "duration" : 1567
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3d3d4f0916ba99eeb5fb1e7531c789e9"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "children" : [ {
+        "name" : "test_add_group[None:::]",
+        "uid" : "ac8803f00903de00",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1618131533649,
+          "stop" : 1618131533650,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:::" ]
+      }, {
+        "name" : "test_add_group[None:namet:headerT>=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#]",
+        "uid" : "64a15adf9f3e43d0",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1618131533931,
+          "stop" : 1618131533931,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:namet:headerT>=#DN_d~O\\wg@i4pW;:footer+di1S 'KktTz=Wdz`#" ]
+      }, {
+        "name" : "test_add_group[None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l]",
+        "uid" : "1178ca8da143aa60",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1618131534220,
+          "stop" : 1618131534220,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name:headerQY|r.BV1X )wa~*7`:footerx] u~KaJN3l" ]
+      } ],
+      "uid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7"
+    }, {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: input[id='301']",
+      "children" : [ {
+        "name" : "test_modify_first_contact",
+        "uid" : "802c7cc2ccf109bb",
+        "parentUid" : "3ad792c0cfe03e11804c2ee5e0591929",
+        "status" : "broken",
+        "time" : {
+          "start" : 1618131541241,
+          "stop" : 1618131541245,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3ad792c0cfe03e11804c2ee5e0591929"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}
